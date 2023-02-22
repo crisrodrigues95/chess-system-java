@@ -26,7 +26,7 @@ public class Programm {
 				UI.gabarito();
 				System.out.println();
 				
-				System.out.print("Posicao da pessa que vai mover: ");
+				System.out.print("Posicao da peca que vai mover: ");
 				ChessPosition source = UI.readChessPosition(sc);
 				
 				boolean[][] possibleMoves = chessMatch.possibleMoves(source);
