@@ -22,6 +22,16 @@ public class Programm {
 				UI.clearScreen();
 				UI.printBoard(chessMatch.getPieces());
 				System.out.println();
+				System.out.println();
+				System.out.println("Gabarito das pecas");
+				System.out.println("K: Rei");
+				System.out.println("R: Torre");
+				System.out.println("B: Bispo");
+				System.out.println("P: Peao");
+				System.out.println("Q: Rainha");
+				System.out.println("H: Cavalo");
+				System.out.println();
+				
 				System.out.print("Posicao da pessa que vai mover: ");
 				ChessPosition source = UI.readChessPosition(sc);
 				
