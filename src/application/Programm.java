@@ -23,17 +23,17 @@ public class Programm {
 				UI.printBoard(chessMatch.getPieces());
 				System.out.println();
 				System.out.println();
-				System.out.println("Gabarito das pecas");
-				System.out.println("K: Rei");
-				System.out.println("R: Torre");
-				System.out.println("B: Bispo");
-				System.out.println("P: Peao");
-				System.out.println("Q: Rainha");
-				System.out.println("H: Cavalo");
+				UI.gabarito();
 				System.out.println();
 				
 				System.out.print("Posicao da pessa que vai mover: ");
 				ChessPosition source = UI.readChessPosition(sc);
+				
+				boolean[][] possibleMoves = chessMatch.possibleMoves(source);
+				UI.clearScreen();
+				UI.printBoard(chessMatch.getPieces(), possibleMoves);
+				UI.gabarito();
+				
 				
 				System.out.println();
 				System.out.print("Pra onde mover essa peca?: ");
