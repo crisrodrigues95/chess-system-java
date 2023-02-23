@@ -72,9 +72,10 @@ public class UI {
 		System.out.println();
 		System.out.println("Turno: "+chessMatch.getTurn());
 		System.out.println();
-		
-		
 		System.out.println("Esperando jogador: " + (chessMatch.getCurrentPlayer() == Color.WHITE ? "BRANCO" : "PRETO"));
+		if (chessMatch.getCheck()) {
+			System.out.println("CHECK !!!");
+		}
 		
 		
 	}
