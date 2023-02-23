@@ -7,6 +7,11 @@ public class ChessPosition {
 	private char column;
 	private int row;
 	
+	@Override
+	public String toString() {
+		return "P";
+	}
+	
 	public ChessPosition(char column, int row) {
 		if (column < 'a' || column > 'h' || row < 1 || row > 8) {
 			throw new ChessException("Posições devem ser entre A1 e H8");		
@@ -32,8 +37,4 @@ public class ChessPosition {
 		return new ChessPosition((char)('a' + position.getColumn()), 8 - position.getRow());
 	}
 	
-	@Override
-	public String toString() {
-		return "" + column + row;
-	}
 }
