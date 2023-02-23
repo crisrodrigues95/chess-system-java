@@ -20,8 +20,8 @@ public class Programm {
 		while(true) {
 			try {
 				UI.clearScreen();
-				UI.printBoard(chessMatch.getPieces());
-				System.out.println();
+				UI.printMatch(chessMatch);
+				
 				System.out.println();
 				UI.gabarito();
 				System.out.println();
@@ -32,10 +32,11 @@ public class Programm {
 				boolean[][] possibleMoves = chessMatch.possibleMoves(source);
 				UI.clearScreen();
 				UI.printBoard(chessMatch.getPieces(), possibleMoves);
-				UI.gabarito();
-				
-				
 				System.out.println();
+				System.out.println();
+				UI.gabarito();
+				System.out.println();
+				
 				System.out.print("Pra onde mover essa peca?: ");
 				ChessPosition target = UI.readChessPosition(sc);
 				

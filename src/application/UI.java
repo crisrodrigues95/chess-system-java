@@ -3,6 +3,7 @@ package application;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import chess.ChessMatch;
 import chess.ChessPiece;
 import chess.ChessPosition;
 import chess.Color;
@@ -38,7 +39,6 @@ public class UI {
 	}
 	
 	public static void gabarito() {
-		System.out.println("");
 		System.out.println("Gabarito das pecas");
 		System.out.println("K: Rei");
 		System.out.println("R: Torre");
@@ -47,6 +47,7 @@ public class UI {
 		System.out.println("Q: Rainha");
 		System.out.println("H: Cavalo");
 	}
+	
 	
 	public static ChessPosition readChessPosition(Scanner sc) {
 		try {
@@ -58,6 +59,19 @@ public class UI {
 			throw new InputMismatchException("Erro ao ler posicao. Valores validos sao de ai a h8");
 		}
 
+	}
+	
+	public static void printMatch(ChessMatch chessMatch) {
+		printBoard(chessMatch.getPieces());
+		System.out.println();
+		System.out.println();
+		System.out.println("Turno: "+chessMatch.getTurn());
+		System.out.println();
+		
+		
+		System.out.println("Esperando jogador: " + (chessMatch.getCurrentPlayer() == Color.WHITE ? "BRANCO" : "PRETO"));
+		
+		
 	}
 
 	public static void printBoard(ChessPiece[][] pieces) {
