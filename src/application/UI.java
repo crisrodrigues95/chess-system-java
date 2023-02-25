@@ -1,5 +1,6 @@
 package application;
 
+
 import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.List;
@@ -52,7 +53,7 @@ public class UI {
 
 	public static ChessPosition readChessPosition(Scanner sc) {
 		try {
-			String s = sc.nextLine();
+			String s = sc.nextLine().toLowerCase();
 			char column = s.charAt(0);
 			int row = Integer.parseInt(s.substring(1));
 			return new ChessPosition(column, row);
@@ -175,7 +176,8 @@ public class UI {
 		System.out.println("Pecas capturadas :");
 		System.out.print("Branco: ");
 		System.out.print(ANSI_WHITE);
-		System.out.println(Arrays.toString(white.toArray()));
+		Arrays.toString(white.toArray());
+		System.out.println();
 		System.out.print(ANSI_RESET);
 		System.out.print("Preto: ");
 		System.out.print(ANSI_YELLOW);

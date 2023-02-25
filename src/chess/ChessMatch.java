@@ -1,6 +1,6 @@
 package chess;
 
-import java.security.InvalidParameterException;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -186,8 +186,8 @@ public class ChessMatch {
 		if(promoted == null) {
 			throw new IllegalStateException("Nao ha peca para promover");
 		}
-		if(!type.equals("B") && !type.equals("b") && !type.equals("H") && !type.equals("h") && !type.equals("R") && !type.equals("r") && !type.equals("Q") && !type.equals("q")) {
-			throw new InvalidParameterException("Promocao invalida");
+		if(!type.equals("B") && !type.equals("H") && !type.equals("R")  && !type.equals("Q")) {
+			return promoted;
 		}
 		
 		Position pos = promoted.getChessPosition().toPosition();
@@ -202,9 +202,9 @@ public class ChessMatch {
 	}
 	
 	private ChessPiece newPiece(String type, Color color) {
-		if (type.equals("B") || type.equals("b")) return new Bishop(board, color);
-		if (type.equals("H") || type.equals("h")) return new Knight(board, color);
-		if (type.equals("Q") || type.equals("q")) return new Queen(board, color);
+		if (type.equals("B")) return new Bishop(board, color);
+		if (type.equals("H")) return new Knight(board, color);
+		if (type.equals("Q")) return new Queen(board, color);
 		return new Bishop(board, color);
 		
 	}

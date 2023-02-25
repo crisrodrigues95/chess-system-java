@@ -1,6 +1,6 @@
 package application;
 
-import java.security.InvalidParameterException;
+
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
@@ -52,7 +52,13 @@ public class Programm {
 				
 				if(chessMatch.getPromoted() !=null) {
 					System.out.print("Para qual peca vai promover seu peao (B/H/R/Q)?: ");
-					String type = sc.nextLine();
+					String type = sc.nextLine().toUpperCase();
+					while (!type.equals("B") && !type.equals("H") && !type.equals("R")  && !type.equals("Q")) {
+						System.out.print("Letra invalida!! Escolha entre (B/H/R/Q) para promover seu peao?: ");
+						type = sc.nextLine().toUpperCase();
+						
+					}
+					
 					chessMatch.replacePromotedPiece(type);
 				}
 			}
@@ -64,10 +70,7 @@ public class Programm {
 				System.out.println(e.getMessage());
 				sc.nextLine();
 			}
-			catch(InvalidParameterException e) {
-				System.out.println(e.getMessage());
-				sc.nextLine();
-			}
+			
 		}
 		
 		UI.clearScreen();
