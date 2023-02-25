@@ -88,40 +88,45 @@ public class UI {
 	public static void printBoard(ChessPiece[][] pieces) {
 		
 		
-		System.out.println("    a   b   c   d   e   f   g   h  ");
-		System.out.println(ANSI_BLACK+"  ________________________________"+ANSI_RESET);
+		System.out.println("   a  b  c  d  e  f  g  h  ");
+		/*System.out.println(ANSI_BLACK+"  ________________________________"+ANSI_RESET);*/
 		
 		for (int i = 0; i < pieces.length; i++) {
 			
-			System.out.print((8 - i)+"  ");
+			System.out.print((8 - i)+" ");
 			for (int j = 0; j < pieces.length; j++) {
 				if ( (i+j) % 2 == 0) {
 					System.out.print(ANSI_BLUE_BACKGROUND);
+					
 				}
 				else {
 					System.out.print(ANSI_PURPLE_BACKGROUND);
+					
 				}
 				
 				printPiece(pieces[i][j], false);
 				
+				
 
 			}
+			
 			System.out.print(ANSI_RESET);
 			System.out.println(" "+ (8 - i));
-			System.out.println(ANSI_BLACK+"  ________________________________"+ANSI_RESET);
+			
+			/*System.out.println(ANSI_BLACK+"  ________________________________"+ANSI_RESET);*/
 			
 		}
 		
 		
-		System.out.print("    a   b   c   d   e   f   g   h  ");
+		System.out.println("   a  b  c  d  e  f  g  h  ");
 
 	}
 
 	public static void printBoard(ChessPiece[][] pieces, boolean[][] possibleMoves) {
-		System.out.println("    a   b   c   d   e   f   g   h  ");
-		System.out.println(ANSI_BLACK+"  ________________________________"+ANSI_RESET);
+		System.out.println("   a  b  c  d  e  f  g  h  ");
+		/*System.out.println(ANSI_BLACK+"  ________________________________"+ANSI_RESET);*/
 		for (int i = 0; i < pieces.length; i++) {
-			System.out.print((8 - i) + "  ");
+			System.out.print((8 - i) + " ");
 			for (int j = 0; j < pieces.length; j++) {
 				if ( (i+j) % 2 == 0) {
 					System.out.print(ANSI_BLUE_BACKGROUND);
@@ -134,9 +139,9 @@ public class UI {
 			}
 			System.out.print(ANSI_RESET);
 			System.out.println(" "+ (8 - i));
-			System.out.println(ANSI_BLACK+"  ________________________________"+ANSI_RESET);
+			/*System.out.println(ANSI_BLACK+"  ________________________________"+ANSI_RESET);*/
 		}
-		System.out.print("    a   b   c   d   e   f   g   h  ");
+		System.out.println("   a  b  c  d  e  f  g  h  ");
 	}
 
 	private static void printPiece(ChessPiece piece, boolean background) {
@@ -151,8 +156,10 @@ public class UI {
 			} else {
 				System.out.print(ANSI_YELLOW + piece + ANSI_RESET);
 			}
+			
+			
 		}
-		System.out.print(" ");
+		
 	}
 
 	private static void printCapturedPieces(List<ChessPiece> captured) {
